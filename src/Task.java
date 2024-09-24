@@ -14,5 +14,24 @@ import java.util.Date;
     - getDetails
  */
 abstract class Task {
+    protected String taskName;
+    private int priority;
+    private Date deadline;
 
+    public Task( String taskName, int priority, Date deadline){
+        this.taskName = taskName;
+        this.priority = priority;
+        this.deadline = deadline;
+
+    }
+
+    abstract void performTask();
+
+    public String getDetails() {
+        return "Tarea {" +
+                "taskName='" + taskName + '\'' +
+                ", priority=" + priority +
+                ", deadline=" + deadline +
+                '}';
+    }
 }
